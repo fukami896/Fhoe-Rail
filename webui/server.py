@@ -85,12 +85,13 @@ def find_user_python():
     AutoClaw 自带的 Python 是 embeddable 精简配置（python313._pth），
     脚本目录不在 sys.path 且缺少 tkinter，不适合运行本项目。
     """
-    candidates = [
-        os.path.join(os.environ.get("LOCALAPPDATA", ""), "Python", "bin", "python.exe"),
-    ]
-    for c in candidates:
-        if c and os.path.exists(c):
-            return c
+    #  candidates = [
+    #     os.path.join(os.environ.get('LOCALAPPDATA', ''), 'Python', 'bin', 'python.exe'),
+    # ]
+    # for c in candidates:
+    #     if c and os.path.exists(c):
+    #         return c
+    # return sys.executable
     return sys.executable
 
 

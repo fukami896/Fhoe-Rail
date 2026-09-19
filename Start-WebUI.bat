@@ -4,16 +4,18 @@ cd /d "%~dp0"
 title Fhoe-Rail WebUI
 
 REM Prefer the user's full Python
-set "PYTHON_BIN=python"
-if exist "%LOCALAPPDATA%\Python\bin\python.exe" set "PYTHON_BIN=%LOCALAPPDATA%\Python\bin\python.exe"
+REM set "PYTHON_BIN=python"
+REM if exist "%LOCALAPPDATA%\Python\bin\python.exe" set "PYTHON_BIN=%LOCALAPPDATA%\Python\bin\python.exe"
 
 echo ================================================
 echo   Fhoe-Rail WebUI - Star Rail Control Panel
+echo   Using uv to run the service.
 echo   Browser will open automatically.
 echo   Press ENTER in this window to stop the service.
 echo ================================================
 echo.
-%PYTHON_BIN% webui/server.py
+REM %PYTHON_BIN% webui/server.py
+uv run -- python webui\server.py
 if errorlevel 1 (
     echo.
     echo [ERROR] WebUI failed to start. Check:
